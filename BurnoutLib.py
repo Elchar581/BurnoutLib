@@ -315,7 +315,7 @@ class HandlerQuestions:
             :param data: Список словарей с пользовательскими данными [id - номер вопроса, answer - пользовательский ответ]
             :type data: list[dict[int, int]]
             :return: Список суммы баллов каждого симптома
-            :rtype: list[int]
+            :rtype: list
         """
 
         for item_data in data:
@@ -350,7 +350,7 @@ class HandlerQuestions:
                             symptom.Question(item_data["id"]).userPoints = 0
 
         # Сборка всей статистики в списке
-        self.getStatistics()
+        return self.getStatistics()
 
     @property
     def points(self) -> int:
